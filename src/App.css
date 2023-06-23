@@ -1,38 +1,419 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata');
+
+body {
+  font-family: 'Inconsolata'
+}
+
+.HomePage::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(215, 85%, 92%, 0.3);
+  z-index: -1;
+  overflow: hidden;
+}
+
+.HomePage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../src/top-view-variety-medicine-tablets.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.MiddleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+
+.box.ExampleBar {
+  color: white;
+  font-weight: bold;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.search-link {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.box.NavBar {
+  color: black;
+  padding: 20px;
+  /* border-radius: 4px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.ResultsContainers {
+  margin-top: 5%;
+  display: flex;
+  /* background-color: #DAE8FC; */
+  max-height: 75vh;
+}
+
+/* .box.DrugName {
+  border: 1px solid red;
+  background-color: #DAE8FC;
+} */
+
+.LeftContainer {
+  margin-left: 5%;
+  /* background-color: #DAE8FC; */
+  width: 50%;
+  margin-right: 3%;
+  max-height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.box.GenBrandClass {
+  /* border: 1px solid red; */
+  margin-top: 4%;
+  margin-bottom: 5%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: keep-all;
+  /* background-color: #DAE8FC; */
+}
+
+.box.SideEffects {
+  max-height: 80vh;
+  overflow-y: auto;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.box.SideEffectsTitle {
+  border-bottom: 1px solid black;
+  margin-bottom: 0%;
+  text-align: center;
+  font-weight: bold;
+  /* background-color: #DAE8FC; */
+}
+
+.box.SideEffectsDescription {
+  overflow-y: auto;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-top: 0;
+  max-height: 100%;
+  box-sizing: border-box;
+  line-height: 2.0;
+}
+
+.RightContainer {
+  /* background-color: #DAE8FC; */
+  max-height: 80vh;
+  max-width: 38%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.box.smallSearchBar {
+  /* border: 1px solid black; */
+  margin-top: 2%;
+  margin-bottom: 8%;
+}
+
+.box.InteractionsTitle {
+  border: 1px solid black;
+  font-weight: bold;
+  text-align: center;
+}
+
+.box.Interactions {
+  border: 1px solid black;
+  border-top: #DAE8FC;
+  overflow-y: auto;
+  padding-left: 2%;
+  padding-right: 2%;
+  line-height: 2.0;
+}
+
+.navbar-left.home {
+  color: black;
+  text-decoration: none;
+  font-size: 150%;
+  font-family: 'Inconsolata';
+  /* padding-left: 5%; */
+}
+
+/* .navbar-right {
+
+} */
+
+.navbar-right.home {
+  color: black;
+  text-decoration: none;
+  font-size: 120%;
+  /* margin-right: 10%; */
+}
+
+.navbar-right.drugs {
+  text-decoration: none;
+  color: black;
+  font-size: 120%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.navbar-right.info {
+  color: black;
+  text-decoration: none;
+  font-size: 120%;
+  /* margin-left: 10%; */
+
+}
+
+.navbar.dash {
+  font-size: 120%;
+  align-items: baseline;
+}
+
+.errorMessage {
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+  font-size: larger;
+  margin-top: 10%;
+}
+
+.ErrorPage {
+  background-color: #DAE8FC;
+  height: 100vh;
+}
+
+.box.errorSearchBar {
+  width: 55%;
+  margin: auto;
+  margin-top: 2%;
+}
+
+.loading-container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.loading-container .logo {
+  width: 30px;
+  height: auto;
+  margin-right: 0.5%;
+}
+
+.InfoPage::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(215, 85%, 92%, 0.8);
+  z-index: -1;
+  overflow: hidden;
+}
+
+.InfoPage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../src/top-view-variety-medicine-tablets.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.about-container.title {
+  text-align: center;
+  text-decoration: underline;
+  /* margin-top: 5%; */
+  /* border: 1px solid red; */
+}
+
+.about-container.description {
+  /* border: 1px solid red; */
+  text-align: center;
+  line-height: 1.5;
+  /* margin-top: 0%;
+  margin-bottom: 2%; */
+  padding-left: 10%;
+  padding-right: 10%;
+  font-weight: 600;
+}
+
+.tech-container.title {
+  /* margin-top: 2%; */
+  text-decoration: underline;
+  text-align: center;
+}
+
+.tech-container.description {
+  text-align: center;
+  line-height: 1.5;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-weight: 600;
+  /* margin-bottom: 2%; */
+}
+
+.disclaimer-container.title {
+  text-decoration: underline;
+  /* margin-top: 2%; */
+  text-align: center;
+}
+
+.disclaimer-container.description {
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+  line-height: 1.5;
+  font-weight: 600;
+  /* margin-bottom: 2%; */
+}
+
+.threecontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70vh;
+}
+
+/* .ResultsPage::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(215, 85%, 92%, 0.85);
+  z-index: -1;
+  overflow: hidden;
+} */
+
+.ResultsPage {
+  background-color: hsl(215, 85%, 92%);
+  height: 100vh;
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../src/top-view-variety-medicine-tablets.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1; */
+}
+
+@media (max-width: 434px) and (orientation: portrait) {
+
+  body {
+    background-color: #DAE8FC;
   }
-  to {
-    transform: rotate(360deg);
+
+  .ResultsPage {
+    position: relative;
+    background-image: none;
+    background-color: #DAE8FC;
   }
+
+  /* .ResultsPage::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(215, 85%, 92%, 0.85);
+    overflow: auto;
+  } */
+
+  .MiddleContainer {
+    max-width: 100vw;
+  }
+
+
+  .ResultsContainers {
+    display: flex;
+    flex-direction: column;
+    max-height: none;
+    flex-grow: 1;
+    margin-bottom: 5%;
+  }
+
+  .LeftContainer {
+    max-height: none;
+    width: 90vw;
+  }
+
+  .box.GenBrandClass {
+    word-wrap: break-word;
+  }
+
+  .box.SideEffects {
+    max-height: none;
+  }
+
+  .box.SideEffectsDescription {
+    text-align: justify;
+  }
+
+  .RightContainer {
+    margin: auto;
+    width: 90vw;
+    max-width: none;
+    background-color: #DAE8FC;
+  }
+
+  .box.smallSearchBar {
+    display: none;
+  }
+
+  .box.InteractionsTitle {
+    margin-top: 5%;
+    display: none;
+  }
+
+  .box.Interactions {
+    margin-bottom: 5%;
+    display: none;
+  }
+
+  .threecontainer {
+    font-size: 90%;
+    margin: auto;
+  }
+
+  .box.errorSearchBar {
+    width: 70vw;
+    margin: auto;
+    margin-top: 10%;
+  }
+
+  .errorMessage {
+    margin: auto;
+    width: 70vw;
+    margin-top: 15vh;
+  }
+
 }
