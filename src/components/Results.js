@@ -50,19 +50,42 @@ function Results() {
               apiKey: process.env.REACT_APP_OPENAI_API_KEY,
             }));
         
-            openai.createChatCompletion({
-              model: "gpt-3.5-turbo",
-              messages: [
-                {
-                  role: 'user',
-                  content: `give me a short purpose of ${userInput.charAt(0).toUpperCase() + userInput.slice(1)} (100 words) its most common side effects, also tell me which side effects require me to consult a doctor, and who should not use this medication.`
-                }
-              ]
-            }).then(res => {
-              const response = res.data.choices[0].message.content;
-              setLoadingGPT(false);
-              setChatGPTResponse(response);
-            });
+            const headers = {
+                'Authorization': `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`
+              };
+            
+              const requestData = {
+                model: "gpt-3.5-turbo",
+                messages: [
+                  {
+                    role: 'user',
+                    content: `give me a short purpose of ${userInput.charAt(0).toUpperCase() + userInput.slice(1)} (100 words) its most common side effects, also tell me which side effects require me to consult a doctor, and who should not use this medication.`
+                  }
+                ]
+              };
+            
+              openai.createChatCompletion(requestData, headers)
+                .then(res => {
+                  const response = res.data.choices[0].message.content;
+                  setLoadingGPT(false);
+                  setChatGPTResponse(response);
+                  console.log(process.env.REACT_APP_OPENAI_API_KEY)
+                }).catch(error => {
+                    console.error('Error occurred while making OpenAI API request:', error);
+                });
+            // openai.createChatCompletion({
+            //   model: "gpt-3.5-turbo",
+            //   messages: [
+            //     {
+            //       role: 'user',
+            //       content: `give me a short purpose of ${userInput.charAt(0).toUpperCase() + userInput.slice(1)} (100 words) its most common side effects, also tell me which side effects require me to consult a doctor, and who should not use this medication.`
+            //     }
+            //   ]
+            // }).then(res => {
+            //   const response = res.data.choices[0].message.content;
+            //   setLoadingGPT(false);
+            //   setChatGPTResponse(response);
+            // });
         };
 
         setSearchValue("");
