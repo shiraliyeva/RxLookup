@@ -17,7 +17,7 @@ Use of RxNorm API and Drug Interactions API to gather accurate information on FD
 ## :gear: Usage
 Simply click on the link below!
 
-https://rx-lookup-amwvlpo0w-shiraliyeva.vercel.app/
+https://rx-lookup.vercel.app/
 
 ## :exclamation: Disclaimer
 The content on this website is not exhaustive or meant to replace professional medical advice. 
