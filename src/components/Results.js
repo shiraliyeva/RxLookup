@@ -69,7 +69,6 @@ function Results() {
                   const response = res.data.choices[0].message.content;
                   setLoadingGPT(false);
                   setChatGPTResponse(response);
-                  console.log(process.env.REACT_APP_OPENAI_API_KEY)
                 }).catch(error => {
                     console.error('Error occurred while making OpenAI API request:', error);
                 });
